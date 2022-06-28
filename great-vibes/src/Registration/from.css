@@ -1,0 +1,11 @@
+
+form{
+    width: 40%;
+    margin: auto;
+}
+div > label{
+    margin-right: 110px;
+}
+::placeholder{
+    color : rgb(185, 185, 185)
+}
