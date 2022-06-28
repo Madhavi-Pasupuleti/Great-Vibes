@@ -12,7 +12,7 @@ function Form() {
         state : "",
         message : ""
     }
-
+    
     const [inputval, SetInputVal] = useState(obj);
     const [inputErrors, SetInputErrors] = useState({})
 
@@ -36,25 +36,23 @@ function Form() {
         if(!val.email){
             errors.email = "Email is required"
         }
-
+         
         return errors
     }
 
     useEffect(() => {
         console.log("inputerrors",inputErrors)
-        if(Object.keys(inputErrors).length == 0){
+        if(Object.keys(inputErrors).length === 0){
             console.log("inputval", inputval)
             SetInputVal({...obj})
-            alert("Registration is Successfull")
         }
     },[inputErrors])
 
     return (
         <div id="f">
             <form onSubmit={handleSubmit}>
-                <h1>Great Vibes</h1>
+                <h1><span style={{color:"lightgreen"}}>Great</span> Vibes</h1>
                 <div>
-                    <label>Name</label><br />
                     <input 
                         type="text" 
                         name = "name"
@@ -63,10 +61,9 @@ function Form() {
                         onChange = {handleChange}
                     />
                 </div>
-                <p>{inputErrors.name}</p>
+                <p className="error">{inputErrors.name}</p>
         
                 <div>
-                    <label>Email</label><br />
                     <input 
                         type="email" 
                         name = "email"
@@ -75,20 +72,18 @@ function Form() {
                         onChange = {handleChange}
                     />
                 </div>
-                <p>{inputErrors.email}</p>
+                <p className="error">{inputErrors.email}</p>
 
-                <div>
-                    <label>Mobile</label><br />
+                <div>  
                     <input 
-                        type="tel" 
+                        type="number" 
                         name = "mobile"
-                        placeholder="enter your mobile"
+                        placeholder="Mobile"
                         value = {inputval.mobile}
                         onChange = {handleChange}
                     />
                 </div><br />
-                <div>
-                    <label>Country</label><br />
+                <div> 
                     <input 
                         type="text" 
                         name = "country"
@@ -97,8 +92,7 @@ function Form() {
                         onChange = {handleChange}
                     />
                 </div><br />
-                <div>
-                    <label>City</label><br />
+                <div>  
                     <input 
                         type="text" 
                         name = "city"
@@ -107,8 +101,7 @@ function Form() {
                         onChange = {handleChange}
                     />
                 </div><br />
-                <div>
-                    <label>State</label><br />
+                <div>  
                     <input 
                         type="text" 
                         name = "state"
@@ -117,17 +110,16 @@ function Form() {
                         onChange = {handleChange}
                     />
                 </div><br />
-                <div>
-                    <label>Message</label><br />
+                <div> 
                     <textarea 
-                        placeholder="Enter your message"
+                        placeholder="Enter Your Message"
                         name="message"
                         value = {inputval.message}
                         onChange = {handleChange}
                     />
                 </div><br />
                 <div>
-                    <input type="submit" />
+                     <button>SUBMIT</button>
                 </div>
             </form>
         </div>

@@ -1,11 +1,59 @@
-
-form{
-    width: 40%;
-    margin: auto;
+body{
+    background-image: linear-gradient(to bottom right, lightgreen, pink);
+    height: 670px;
 }
-div > label{
-    margin-right: 110px;
+h1{
+    color : pink
+}
+form{
+    width: 20%;
+    margin: auto; 
+    margin-top: 80px;
+    background-color: white;
+    padding: 20px 60px 40px 60px;
+    border-radius: 3px;
+}
+input {
+    width: 300px;
+    height: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    background-color: rgb(236, 236, 236);
+}
+input:hover{
+    border: 1px solid green;
+}
+textarea{
+    width: 300px;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(236, 236, 236);
+}
+button{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid green;
+    font-weight: bold;
+    background-color: rgb(236, 236, 236);
+}
+button:hover{
+    background-color: lightgreen;
 }
 ::placeholder{
-    color : rgb(185, 185, 185)
+    padding-left: 10px;
+    color: black;
+}
+.error{
+    color: red;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    font-size: small;
+    padding-left: 5px;
 }
