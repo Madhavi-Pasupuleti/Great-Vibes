@@ -1,7 +1,7 @@
 const express = require("express")
 
 const Movie = require("../models/movie.model")
-
+const {Aunthentication} = require("../controllers/login.controller")
 const router = express.Router()
 
 router.get("", async(req,res) => {
@@ -25,7 +25,7 @@ router.post("/", async(req,res) => {
     }
 })
 
-router.delete("/delete/:id", async(req,res)=> {
+router.delete("/delete/:id",Aunthentication, async(req,res)=> {
     try{
         const movie = await Movie.findByIdAndDelete(req.params.id)
         return res.send(movie)
@@ -35,7 +35,7 @@ router.delete("/delete/:id", async(req,res)=> {
     }
 })
 
-router.patch("/update/:id", async(req,res)=> {
+router.patch("/update/:id", Aunthentication, async(req,res)=> {
     try{
         const movie = await Movie.findByIdAndUpdate(req.params.id,req.body)
         return res.send(movie)
