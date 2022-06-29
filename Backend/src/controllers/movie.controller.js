@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.get("", async(req,res) => {
     try{
-        const data = await Movie.find() 
+        const data = await Movie.find().lean().exec()
         return res.send(data)
     }
     catch(err){
