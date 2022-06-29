@@ -30,7 +30,7 @@ textarea{
     height: 60px;
     display: flex;
     flex-wrap: wrap;
-    border: none;
+    border: 1px solid lightgrey;
     border-radius: 3px;
     background-color: rgb(236, 236, 236);
 }
