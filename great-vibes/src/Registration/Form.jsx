@@ -15,16 +15,17 @@ function Form() {
     
     const [inputval, SetInputVal] = useState(obj);
     const [inputErrors, SetInputErrors] = useState({})
-
+    const [submit, SetSubmit] = useState(false)
     const handleChange = (e) => {
         const {name , value} = e.target;
         SetInputVal({...inputval, [name] : value})
-        console.log(inputval)
+        // console.log(inputval)
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
         SetInputErrors(validation(inputval))
+        SetSubmit(true)
     }
 
     const validation = (val) => {
@@ -41,10 +42,10 @@ function Form() {
     }
 
     useEffect(() => {
-        console.log("inputerrors",inputErrors)
-        if(Object.keys(inputErrors).length === 0){
-            console.log("inputval", inputval)
+
+        if(Object.keys(inputErrors).length === 0 && submit){
             SetInputVal({...obj})
+            alert("Registered Successfully")
         }
     },[inputErrors])
 
