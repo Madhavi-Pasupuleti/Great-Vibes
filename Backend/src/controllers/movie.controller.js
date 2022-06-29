@@ -25,4 +25,24 @@ router.post("/", async(req,res) => {
     }
 })
 
+router.delete("/delete/:id", async(req,res)=> {
+    try{
+        const movie = await Movie.findByIdAndDelete(req.params.id)
+        return res.send(movie)
+    }
+    catch(e){
+        return res.status(500).send({message : err.message})
+    }
+})
+
+router.patch("/update/:id", async(req,res)=> {
+    try{
+        const movie = await Movie.findByIdAndUpdate(req.params.id,req.body)
+        return res.send(movie)
+    }
+    catch(e){
+        return res.status(500).send({message : err.message})
+    }
+})
+
 module.exports = router
