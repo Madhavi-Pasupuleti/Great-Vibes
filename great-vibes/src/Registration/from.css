@@ -33,6 +33,7 @@ textarea{
     border: 1px solid lightgrey;
     border-radius: 3px;
     background-color: rgb(236, 236, 236);
+    resize : none;
 }
 button{
     width: 50%;
